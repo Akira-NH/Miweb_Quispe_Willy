@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci</title>
+</head>
+<body>
+
+    <h2>Serie de Fibonacci</h2>
+
+    <input type="number" id="numero" placeholder="Ingresa un número">
+    <button onclick="generarFibonacci()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function generarFibonacci() {
+            let n = document.getElementById("numero").value;
+            let resultado = document.getElementById("resultado");
+
+            let a = 0, b = 1;
+            let serie = "";
+
+            for (let i = 0; i < n; i++) {
+                serie += a + " ";
+                let siguiente = a + b;
+                a = b;
+                b = siguiente;
+            }
+
+            resultado.textContent = serie;
+        }
+    </script>
+
+</body>
+</html>
